@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 4000
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/graphql-vs-rest'
 
 mongoose
-  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: true })
+  .connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false })
   .then(() => console.log('Connected to MongoDB'))
   .catch(console.log)
 

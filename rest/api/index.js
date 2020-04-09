@@ -5,7 +5,7 @@ const router = Router()
 
 router
   .route('/todos/:_id?')
-  .get(async ({ _id }, res) => {
+  .get(async ({ params: { _id } }, res) => {
     if (!_id) {
       // fetch all data
       res.send({
@@ -24,13 +24,13 @@ router
       data: await newTodo.save()
     })
   })
-  .put(async ({ _id, body: data }, res) => {
+  .put(async ({ params: { _id }, body: data }, res) => {
     res.send({
       data: await Todo
         .findByIdAndUpdate(_id, data, { new: true })
     })
   })
-  .delete(async ({ _id }, res) => {
+  .delete(async ({ params: { _id } }, res) => {
     res.send({
       data: await Todo
         .findByIdAndDelete(_id)
