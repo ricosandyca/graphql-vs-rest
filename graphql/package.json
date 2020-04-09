@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node main.js",
-    "dev": "nodemon main.js",
+    "dev": "NODE_ENV=development nodemon main.js",
     "db-seed": "node database/seeds.js"
   },
   "dependencies": {
